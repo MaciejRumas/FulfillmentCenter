@@ -60,6 +60,7 @@ public class Main {
 
         newContainer.removeCenter ("Warehouse_2");
 
+        
 
     }
 }
