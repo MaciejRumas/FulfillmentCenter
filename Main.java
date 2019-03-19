@@ -57,7 +57,6 @@ public class Main {
         for(FulfillmentCenter i:list2){
             i.summary();
         }
-
         newContainer.removeCenter ("Warehouse_2");
 
     }
