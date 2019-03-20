@@ -35,6 +35,7 @@ public class FulfillmentCenter {
 
     public void getProduct(Item itemToGet) {
         boolean found = false;
+        boolean remove = false;
         for (Item i : this.items) {
             if (i.compareTo(itemToGet) == 0) {
                 found = true;
@@ -44,8 +45,7 @@ public class FulfillmentCenter {
                 } else {
                     i.quantity -= itemToGet.quantity;
                     if(i.quantity == 0){
-                        System.out.println("Product has been removed");
-                        removeProduct(itemToGet);
+                        remove = true;
                     }
                 }
             }
@@ -53,6 +53,10 @@ public class FulfillmentCenter {
         if (!found) {
             System.err.println("There is no such item");
         }
+        
+        if(remove){
+            removeProduct(itemToGet);
+            System.out.println("Product has been removed");
     }
 
     public void removeProduct(Item itemToRemove) {
